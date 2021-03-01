@@ -4,6 +4,10 @@ app = Flask(__name__)
 
 valor = {}
 
+@app.route('/')
+def main():
+    return str(valor)
+
 @app.route('/pytao-top3')
 def top3():
     my_keys = sorted(valor, key=valor.get, reverse=True)[:3]
